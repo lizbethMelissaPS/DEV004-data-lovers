@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title> Data Lovers  prueba</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
 
-    <header></header>
-    <nav>
+<head>
+  <meta charset="utf-8">
+  <title> Data Lovers prueba</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header></header>
+  <nav>
+    <div>
+      <label for="">type</label>
       <select name="lenguajes" id="lang">
         <option value="todos">Todos</option>
         <option value="normal">Normal</option>
@@ -30,6 +34,10 @@
         <option value="steel">Steel</option>
         <option value="fairy">Fairy</option>
       </select>
+    </div>
+
+    <div>
+      <label for="">generation</label>
       <select name="lenguajes" id="lang">
         <option value="1">Kanto</option>
         <option value="2">Johto</option>
@@ -41,15 +49,23 @@
         <option value="8">Galar</option>
         <option value="9">Paldea</option>
       </select>
+    </div>
 
-    </nav>
-    <main>
-    
-    </main>
+    <form class="form-size">
+      <label for="">Find out if you're taller than pikachu!</label>
+      <input type="text">
+      <button id="btn">click here</button>
+    </form>
 
-    <footer></footer>
+  </nav>
+  <main>
 
-    <div id="root"></div>
-    <script src="main.js" type="module"></script>
-  </body>
+  </main>
+
+  <footer></footer>
+
+  <div id="root"></div>
+  <script src="main.js" type="module"></script>
+</body>
+
 </html>
