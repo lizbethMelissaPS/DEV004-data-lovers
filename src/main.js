@@ -1,4 +1,4 @@
-import { filterData, sortData, computeStats } from './data.js';
+import { filterDataType, filterDataGeneration, sortData, computeStats } from './data.js';
 //import data from './data/pokemon/pokemon.js';
 
 fetch("./data/pokemon/pokemon.json")
@@ -7,7 +7,7 @@ fetch("./data/pokemon/pokemon.json")
   })
   .then((data) => {
     const arr = data.pokemon
-    const mostrar = function (arr) {
+    const mostrar = (arr) => {
       let templateListPoke = '';
       // recorremos nuestro array con forEach
       arr.forEach((element) => {
@@ -31,11 +31,44 @@ fetch("./data/pokemon/pokemon.json")
           `;
         templateListPoke += card;
       });
+
       document.getElementById('listaPokemon').innerHTML = templateListPoke;
     };
-    mostrar(arr);
+    mostrar(arr)
+
+    /* const filtrar = (arr)=> {
+      arr.forEach((element)=>{
+        const newArr = element.type
+        for (let i = 0; i < newArr.length; i++) {
+          const element = newArr[i];
+          console.log(newArr);
+        }
+        console.log(newArr);
+        //const x= "grass"
+      //filterData (newArr , x)
+      
+      })
+    }
+    filtrar(arr) */
+
+    //const x= "psychic"
+    /*const y= "generation ii" */
+    
+    const filterList = document.getElementById('filterListType');
+    console.log(filterList);
+    filterList.addEventListener('change', () => {
+      console.log("aqui");
+      const condicion = filterList.value //"psychic"
+      console.log(condicion);
+      mostrar(filterDataType(arr, condicion))
+    })
+   
+
+    //document.getElementById('filterListGeneration').addEventListener('change', mostrar(filterDataGeneration(arr, y)))
 
 
+    const ordenar = (a, b) => a.name - b.name
+    sortData(arr, ordenar)
   })
 
 
