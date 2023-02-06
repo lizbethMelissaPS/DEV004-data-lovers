@@ -54,13 +54,22 @@ fetch("./data/pokemon/pokemon.json")
     //const x= "psychic"
     /*const y= "generation ii" */
     
-    const filterList = document.getElementById('filterListType');
-    console.log(filterList);
-    filterList.addEventListener('change', () => {
-      console.log("aqui");
-      const condicion = filterList.value //"psychic"
-      console.log(condicion);
+    const listType = document.getElementById('filterListType');
+    
+    listType.addEventListener('change', () => {
+      
+      const condicion = listType.value //"psychic"
+      
       mostrar(filterDataType(arr, condicion))
+    })
+
+    const listGeneration = document.getElementById('filterListGeneration');
+    console.log(listGeneration);
+    listGeneration.addEventListener('change', () => {
+      console.log("aqui");
+      const condicion = listGeneration.value //"psychic"
+      console.log(condicion);
+      mostrar(filterDataGeneration(arr, condicion))
     })
    
 
