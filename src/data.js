@@ -6,7 +6,9 @@ export const filterDataType = (data, condition) => {
   return filtroType;
 }
 export const filterDataGeneration = (data, condition) => {
-  const filtroGeneration = data.filter((data) => data.generation.num.includes(condition));
+  console.log(condition);
+  const filtroGeneration = data.filter((data) => data.generation.name.includes(condition));
+  console.log(filterDataGeneration);
   return filtroGeneration;
 }
 /* data, nos entrega los datos.
@@ -14,11 +16,11 @@ export const filterDataGeneration = (data, condition) => {
   sortOrder, indica ascendente o descendente. */
 export const sortData = (data, sortBy, sortOrder) => {
   //data.sort()///orden ascendente (de la A a la Z) por defecto
-  data.sort(sortOrder)///ordenar descentente
+ /*  data.sort(sortOrder)///ordenar descentente
   data.sort().reverse()///ordenar descentente
   //const orden = data(propiedad=>propiedad.num)
   console.log(data.sort(sortOrder))
-  return 'ordenar';
+  return 'ordenar'; */
 };
 /* calcular, nos permitirá hacer cálculos estadísticos básicos
  para ser mostrados de acuerdo a la data proporcionada. */
