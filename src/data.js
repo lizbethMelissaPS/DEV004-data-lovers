@@ -9,7 +9,6 @@ export const filterDataGeneration = (data, condition) => {
 
 export const sortData = (data, sortBy, sortOrder) => {
   const descentente = data.sort(sortOrder)
-  console.log(descentente);
   //data.sort()///orden ascendente (de la A a la Z) por defecto
 /*  data.sort(sortOrder)///ordenar descentente
   data.sort().reverse()///ordenar descentente

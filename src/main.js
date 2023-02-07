@@ -1,15 +1,22 @@
-import { filterDataType, filterDataGeneration, sortData, computeStats } from './data.js';
+import {
+  filterDataType,
+  filterDataGeneration,
+  sortData,
+  computeStats,
+} from "./data.js";
 fetch("./data/pokemon/pokemon.json")
   .then((res) => {
     return res.json();
   })
   .then((data) => {
-    const arr = data.pokemon
+    const arr = data.pokemon;
     const mostrar = (arr) => {
-      let templateListPoke = '';
+      let templateListPoke = "";
       // recorremos nuestro array con forEach
       arr.forEach((element) => {
-        const listTypes = element.type.map((type) => `<p class="${type} type">${type}</p>`);
+        const listTypes = element.type.map(
+          (type) => `<p class="${type} type">${type}</p>`
+        );
         // creamos un template(string) por cada elemento del array
         const card = `
                 <div class="pokeball">
@@ -22,30 +29,44 @@ fetch("./data/pokemon/pokemon.json")
                             <img src='${element.img}' alt="${element.name}"/>
                         </div>
                         <div class="type-container">
-                            ${listTypes.join('')}
+                            ${listTypes.join("")}
                         </div>
                     </div>
                 </div>
           `;
         templateListPoke += card;
       });
-      document.getElementById('listaPokemon').innerHTML = templateListPoke;
+      document.getElementById("listaPokemon").innerHTML = templateListPoke;
     };
-    mostrar(arr)
+    mostrar(arr);
 
-    const listType = document.getElementById('filterListType');
-    listType.addEventListener('change', () => {
-      const condicion = listType.value
-      mostrar(filterDataType(arr, condicion))
-    })
+    const listType = document.getElementById("filterListType");
+    listType.addEventListener("change", () => {
+      const condicion = listType.value;
+      mostrar(filterDataType(arr, condicion));
+    });
 
-    const listGeneration = document.getElementById('filterListGeneration');
-    listGeneration.addEventListener('change', () => {
-      const condicion = listGeneration.value
-      mostrar(filterDataGeneration(arr, condicion))
-    })
-    const campo = 'name'
-    const ordenar = (a, b) => a.name - b.name
-    sortData(arr, campo, ordenar)
-    
-  })
+    const listGeneration = document.getElementById("filterListGeneration");
+    listGeneration.addEventListener("change", () => {
+      const condicion = listGeneration.value;
+      mostrar(filterDataGeneration(arr, condicion));
+    });
+    const campo = "name";
+    const ordenar = (a, b) => a.name - b.name;
+    sortData(arr, campo, ordenar);
+  });
+
+const btn = document.getElementById("btn");
+const res = document.getElementById("res");
+
+
+btn.addEventListener("click", (e) => {
+  const talla = document.getElementById("idTalla").value;
+  if (talla > 41) {
+    res.innerHTML = "Congrats! You are taller than pikachu";
+  }
+  else {
+    res.innerHTML = "You are shorter than pikachu";
+  }
+  e.preventDefault();
+});
