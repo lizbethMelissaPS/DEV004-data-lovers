@@ -31,53 +31,25 @@ fetch("./data/pokemon/pokemon.json")
           `;
         templateListPoke += card;
       });
-
       document.getElementById('listaPokemon').innerHTML = templateListPoke;
     };
     mostrar(arr)
 
-    /* const filtrar = (arr)=> {
-      arr.forEach((element)=>{
-        const newArr = element.type
-        for (let i = 0; i < newArr.length; i++) {
-          const element = newArr[i];
-          console.log(newArr);
-        }
-        console.log(newArr);
-        //const x= "grass"
-      //filterData (newArr , x)
-      
-      })
-    }
-    filtrar(arr) */
-
-    //const x= "psychic"
-    /*const y= "generation ii" */
-    
     const listType = document.getElementById('filterListType');
-    
     listType.addEventListener('change', () => {
-      
-      const condicion = listType.value //"psychic"
-      
+      const condicion = listType.value
       mostrar(filterDataType(arr, condicion))
     })
 
     const listGeneration = document.getElementById('filterListGeneration');
-    console.log(listGeneration);
     listGeneration.addEventListener('change', () => {
-      console.log("aqui");
-      const condicion = listGeneration.value //"psychic"
-      console.log(condicion);
+      const condicion = listGeneration.value
       mostrar(filterDataGeneration(arr, condicion))
     })
-   
-
-    //document.getElementById('filterListGeneration').addEventListener('change', mostrar(filterDataGeneration(arr, y)))
-
-
+    const campo = 'name'
     const ordenar = (a, b) => a.name - b.name
-    sortData(arr, ordenar)
+    sortData(arr, campo, ordenar)
+    
   })
 
 
