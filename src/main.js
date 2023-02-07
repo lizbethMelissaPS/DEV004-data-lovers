@@ -1,9 +1,4 @@
-import {
-  filterDataType,
-  filterDataGeneration,
-  sortData,
-  computeStats,
-} from "./data.js";
+import {filterDataType, filterDataGeneration, sortData,computeStats} from "./data.js";
 fetch("./data/pokemon/pokemon.json")
   .then((res) => {
     return res.json();
@@ -51,21 +46,26 @@ fetch("./data/pokemon/pokemon.json")
       const condicion = listGeneration.value;
       mostrar(filterDataGeneration(arr, condicion));
     });
-    const campo = "name";
-    const ordenar = (a, b) => a.name - b.name;
-    sortData(arr, campo, ordenar);
-  });
+
+    //sortOrder: ascendente , descendente
+    //sortBy: numero, nombre
+    const condicion = "num";
+    const sortOrder = "descendente";
+    sortData(arr, condicion, sortOrder);
+    /* const order = document.getElementById("order");
+    order.addEventListener("change", () => {
+      const condicion = order.value; //descending
+      // mostrar(sortData(arr, condicion, ordenar));
+    }); */
+  }); //termina el then
 
 const btn = document.getElementById("btn");
 const res = document.getElementById("res");
-
-
 btn.addEventListener("click", (e) => {
   const talla = document.getElementById("idTalla").value;
   if (talla > 41) {
     res.innerHTML = "Congrats! You are taller than pikachu";
-  }
-  else {
+  } else {
     res.innerHTML = "You are shorter than pikachu";
   }
   e.preventDefault();
