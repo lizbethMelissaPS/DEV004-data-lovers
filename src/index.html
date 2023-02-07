@@ -10,6 +10,18 @@
 <body>
 
   <header>
+    <div class="searchBox">
+      <input id="pokemonName" type="text" placeholder="search"/>
+    </div>
+
+    <div class="orderBox">
+      <select id="Order">
+        <option value="ascending">Upward</option>
+        <option value="descending">Downward</option>
+      </select> 
+    </div>
+  
+
   <nav>
     <div>
       <label for="">type</label>
@@ -39,15 +51,9 @@
     <div>
       <label for="">generation</label>
       <select id="filterListGeneration">
-        <option value="1">Kanto</option>
-        <option value="2">Johto</option>
-        <option value="3">Hoenn</option>
-        <option value="4">Sinnoh/Hisui</option>
-        <option value="5">Teselia</option>
-        <option value="6">Kalos</option>
-        <option value="7">Alola</option>
-        <option value="8">Galar</option>
-        <option value="9">Paldea</option>
+        <option >Todos</option>
+        <option value="kanto">Kanto</option>
+        <option value="johto">Johto</option>
       </select>
     </div>
 
@@ -62,24 +68,23 @@
   <main>
     <div id="todos">
       <div class="lista-pokemon-todos" id="listaPokemon">
-        <!-- <div class="pokemon">
-          <div class="pokeball">
-            <div class="name-container">
-              <p class="num">#001</p>
-              <p class="name">Nombre pokemon</p>
-            </div>
-            <div class="img-container">
-              <img src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="">
-            </div>
-            <div class="type-container">
-              <p class="poison type">poison</p>
-              <p class="grass type">grass</p>
-            </div>
-          </div>
-        </div> -->
+        <!-- <div class="pokeball">
+              <div class="pokemon">
+                <div class="name-container">
+                  <p class="num">#001</p>
+                  <p class="name">Nombre pokemon</p>
+                </div>
+                <div class="img-container">
+                  <img src="https://www.serebii.net/pokemongo/pokemon/001.png" alt="">
+                </div>
+                <div class="type-container">
+                  <p class="poison type">poison</p>
+                  <p class="grass type">grass</p>
+                </div>
+              </div>
+            </div> -->
       </div>
     </div>
-    <!-- <div class="lista-pokemon-todos" id="allThePokemones"> </div> -->
   </main>
 
   <footer></footer>

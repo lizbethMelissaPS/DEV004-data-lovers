@@ -14,8 +14,8 @@ fetch("./data/pokemon/pokemon.json")
         const listTypes = element.type.map((type) => `<p class="${type} type">${type}</p>`);
         // creamos un template(string) por cada elemento del array
         const card = `
-                <div class="pokemon">
-                    <div class="pokeball">
+                <div class="pokeball">
+                    <div class="pokemon">
                         <div class="name-container">
                             <p class="num">#${element.num}</p>
                             <p class="name">${element.name}</p>
@@ -35,44 +35,23 @@ fetch("./data/pokemon/pokemon.json")
       document.getElementById('listaPokemon').innerHTML = templateListPoke;
     };
     mostrar(arr)
-
-    /* const filtrar = (arr)=> {
-      arr.forEach((element)=>{
-        const newArr = element.type
-        for (let i = 0; i < newArr.length; i++) {
-          const element = newArr[i];
-          console.log(newArr);
-        }
-        console.log(newArr);
-        //const x= "grass"
-      //filterData (newArr , x)
-      
-      })
-    }
-    filtrar(arr) */
-
-    //const x= "psychic"
-    /*const y= "generation ii" */
-    
-    const filterList = document.getElementById('filterListType');
-    console.log(filterList);
-    filterList.addEventListener('change', () => {
-      console.log("aqui");
-      const condicion = filterList.value //"psychic"
-      console.log(condicion);
+    // Filtro por tipo
+    const listType = document.getElementById('filterListType');
+    listType.addEventListener('change', () => {
+      const condicion = listType.value 
       mostrar(filterDataType(arr, condicion))
     })
-   
+
+    // Filtro por generacion
+    const listGeneration = document.getElementById('filterListGeneration');
+    listGeneration.addEventListener('change', () => {
+      const condicion = listGeneration.value //
+      mostrar(filterDataGeneration(arr, condicion))
+    })
 
     //document.getElementById('filterListGeneration').addEventListener('change', mostrar(filterDataGeneration(arr, y)))
-
+    Swal.fire('Any fool can use a computer');
 
     const ordenar = (a, b) => a.name - b.name
     sortData(arr, ordenar)
   })
-
-
-
-
-
-
