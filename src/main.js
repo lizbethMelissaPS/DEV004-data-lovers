@@ -1,6 +1,4 @@
 import { filterDataType, filterDataGeneration, sortData, computeStats } from './data.js';
-//import data from './data/pokemon/pokemon.js';
-
 fetch("./data/pokemon/pokemon.json")
   .then((res) => {
     return res.json();

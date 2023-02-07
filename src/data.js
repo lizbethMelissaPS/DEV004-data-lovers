@@ -3,9 +3,7 @@ export const filterDataType = (data, condition) => {
   return filtroType;
 }
 export const filterDataGeneration = (data, condition) => {
-  console.log(condition);
   const filtroGeneration = data.filter((data) => data.generation.name.includes(condition));
-  console.log(filterDataGeneration);
   return filtroGeneration;
 }
 
@@ -13,7 +11,7 @@ export const sortData = (data, sortBy, sortOrder) => {
   const descentente = data.sort(sortOrder)
   console.log(descentente);
   //data.sort()///orden ascendente (de la A a la Z) por defecto
- /*  data.sort(sortOrder)///ordenar descentente
+/*  data.sort(sortOrder)///ordenar descentente
   data.sort().reverse()///ordenar descentente
   //const orden = data(propiedad=>propiedad.num)
   console.log(data.sort(sortOrder))
