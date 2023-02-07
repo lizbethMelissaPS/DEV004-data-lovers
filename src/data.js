@@ -12,12 +12,17 @@ export const filterDataGeneration = (data, condition) => {
 //sortBy: numero, nombre
 export const sortData = (data, sortOrder) => {
   if (sortOrder === "descending") {
-    console.log("aqui2");
-    const des = data.sort().reverse();
+    console.log("aqui2")
+    //const des = data.sort((a, b) => b.name-a.name);
+    const des = data.sort((a, b) => b.name.localeCompare(a.name));
+    console.log(des)
     return des
   } else {
-    console.log("aqui");
-    return data.sort();
+    console.log("aqui")
+    //const asc = data.sort((a,b) => a.name-b.name);
+    const asc = data.sort((a,b) => a.name.localeCompare(b.name));
+    console.log(asc)
+    return asc;
   }
 };
 /* calcular, nos permitirá hacer cálculos estadísticos básicos
