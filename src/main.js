@@ -1,4 +1,4 @@
-import {filterDataType, filterDataGeneration, sortData,computeStats} from "./data.js";
+import {filterDataType,filterDataGeneration,sortData,computeStats} from "./data.js";
 fetch("./data/pokemon/pokemon.json")
   .then((res) => {
     return res.json();
@@ -49,14 +49,12 @@ fetch("./data/pokemon/pokemon.json")
 
     //sortOrder: ascendente , descendente
     //sortBy: numero, nombre
-    const condicion = "num";
-    const sortOrder = "descendente";
-    sortData(arr, condicion, sortOrder);
-    /* const order = document.getElementById("order");
-    order.addEventListener("change", () => {
-      const condicion = order.value; //descending
-      // mostrar(sortData(arr, condicion, ordenar));
-    }); */
+    const order = document.getElementById("order");
+    order.addEventListener("change", funOrder);
+    function funOrder() {
+      const sortOrder = order.value;
+      mostrar(sortData(arr, sortOrder))
+    }
   }); //termina el then
 
 const btn = document.getElementById("btn");
