@@ -31,27 +31,23 @@ fetch("./data/pokemon/pokemon.json")
           `;
         templateListPoke += card;
       });
-
       document.getElementById('listaPokemon').innerHTML = templateListPoke;
     };
     mostrar(arr)
-    // Filtro por tipo
+
     const listType = document.getElementById('filterListType');
     listType.addEventListener('change', () => {
-      const condicion = listType.value 
+      const condicion = listType.value
       mostrar(filterDataType(arr, condicion))
     })
 
-    // Filtro por generacion
     const listGeneration = document.getElementById('filterListGeneration');
     listGeneration.addEventListener('change', () => {
-      const condicion = listGeneration.value //
+      const condicion = listGeneration.value
       mostrar(filterDataGeneration(arr, condicion))
     })
-
-    //document.getElementById('filterListGeneration').addEventListener('change', mostrar(filterDataGeneration(arr, y)))
-    Swal.fire('Any fool can use a computer');
-
+    const campo = 'name'
     const ordenar = (a, b) => a.name - b.name
-    sortData(arr, ordenar)
+    sortData(arr, campo, ordenar)
+    
   })
