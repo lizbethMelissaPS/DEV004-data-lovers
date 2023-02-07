@@ -49,12 +49,12 @@ fetch("./data/pokemon/pokemon.json")
 
     //sortOrder: ascendente , descendente
     //sortBy: numero, nombre
-    const order = document.getElementById("order");
-    order.addEventListener("change", funOrder);
-    function funOrder() {
-      const sortOrder = order.value;
-      mostrar(sortData(arr, sortOrder))
-    }
+    const listOrder = document.getElementById("order");
+    listOrder.addEventListener("change", () => {
+      const condicion = listOrder.value;
+      console.log(condicion);
+      mostrar(sortData(arr, condicion));
+    });
   }); //termina el then
 
 const btn = document.getElementById("btn");
