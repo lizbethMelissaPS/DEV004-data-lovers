@@ -51,9 +51,14 @@ fetch("./data/pokemon/pokemon.json")
     //sortBy: numero, nombre
     const listOrder = document.getElementById("order");
     listOrder.addEventListener("change", () => {
-      const condicion = listOrder.value;
-      console.log(condicion);
-      mostrar(sortData(arr, condicion));
+      const sortOrder = listOrder.value;
+      const sortBy1 = 'a-z'
+      const sortBy2 = 'z-a'
+      const sortBy3 = 'ascending'
+      const sortBy4 = 'descending'
+      //console.log(sortBy);
+      console.log(sortOrder);
+      mostrar(sortData(arr,sortBy1,sortBy2,sortBy3,sortBy4, sortOrder));
     });
   }); //termina el then
 
@@ -61,7 +66,7 @@ const btn = document.getElementById("btn");
 const res = document.getElementById("res");
 btn.addEventListener("click", (e) => {
   const talla = document.getElementById("idTalla").value;
-  if (talla > 41) {
+  if (talla >0.41) {
     res.innerHTML = "Congrats! You are taller than pikachu";
   } else {
     res.innerHTML = "You are shorter than pikachu";

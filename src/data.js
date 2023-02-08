@@ -10,21 +10,21 @@ export const filterDataGeneration = (data, condition) => {
 };
 //sortOrder: ascendente , descendente
 //sortBy: numero, nombre
-export const sortData = (data, sortOrder) => {
-  if (sortOrder === "descending") {
-    console.log("aqui2")
-    //const des = data.sort((a, b) => b.name-a.name);
-    const des = data.sort((a, b) => b.name.localeCompare(a.name));
-    console.log(des)
-    return des
-  } else {
-    console.log("aqui")
-    //const asc = data.sort((a,b) => a.name-b.name);
-    const asc = data.sort((a,b) => a.name.localeCompare(b.name));
-    console.log(asc)
-    return asc;
+export const sortData = (data,sortBy1,sortBy2,sortBy3,sortBy4, sortOrder) => {
+  let respuesta;
+  switch (sortOrder) {
+    case sortBy1: respuesta = data.sort((a, b) => a.name.localeCompare(b.name)); break;
+    case sortBy2: respuesta = data.sort((a, b) => b.name.localeCompare(a.name)); break;
+    case sortBy3: respuesta = data.sort((a, b) => a.num.localeCompare(b.num)); break;
+    case sortBy4: respuesta = data.sort((a, b) => b.num.localeCompare(a.num)); break;
   }
+  return respuesta
+
 };
+
+
+
+
 /* calcular, nos permitirá hacer cálculos estadísticos básicos
  para ser mostrados de acuerdo a la data proporcionada. */
 export const computeStats = (data) => {
