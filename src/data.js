@@ -3,26 +3,33 @@ export const filterDataType = (data, condition) => {
   return filtroType;
 };
 export const filterDataGeneration = (data, condition) => {
-  const filtroGeneration = data.filter((data) =>
-    data.generation.name.includes(condition)
+  const filtroGeneration = data.filter((data) => data.generation.name.includes(condition)
   );
   return filtroGeneration;
 };
-//sortOrder: ascendente , descendente
-//sortBy: numero, nombre
+
 export const sortData = (data,sortBy1,sortBy2,sortBy3,sortBy4, sortOrder) => {
   let respuesta;
   switch (sortOrder) {
-    case sortBy1: respuesta = data.sort((a, b) => a.name.localeCompare(b.name)); break;
-    case sortBy2: respuesta = data.sort((a, b) => b.name.localeCompare(a.name)); break;
-    case sortBy3: respuesta = data.sort((a, b) => a.num.localeCompare(b.num)); break;
-    case sortBy4: respuesta = data.sort((a, b) => b.num.localeCompare(a.num)); break;
+  case sortBy1: respuesta = data.sort((a, b) => a.name.localeCompare(b.name)); break;
+  case sortBy2: respuesta = data.sort((a, b) => b.name.localeCompare(a.name)); break;
+  case sortBy3: respuesta = data.sort((a, b) => a.num.localeCompare(b.num)); break;
+  case sortBy4: respuesta = data.sort((a, b) => b.num.localeCompare(a.num)); break;
   }
   return respuesta
 
 };
 
+export const buscar = (data,condicion) => {
+  const buscarName = data.filter((data) => data.name.startsWith(condicion));
+  const buscarNum = data.filter((data) => data.num.startsWith(condicion));
+  return [...buscarName,...buscarNum ] ;
+};
 
+/* export const buscarNum = (data,condicion) => {
+  const buscarNum = data.filter((data) => data.num.startsWith(condicion));
+  return buscarNum;
+}; */
 
 
 /* calcular, nos permitirá hacer cálculos estadísticos básicos
@@ -30,3 +37,4 @@ export const sortData = (data,sortBy1,sortBy2,sortBy3,sortBy4, sortOrder) => {
 export const computeStats = (data) => {
   return "OMG";
 };
+

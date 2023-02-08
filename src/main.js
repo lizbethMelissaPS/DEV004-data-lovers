@@ -1,4 +1,4 @@
-import {filterDataType,filterDataGeneration,sortData,computeStats} from "./data.js";
+import {filterDataType,filterDataGeneration,sortData,computeStats, buscar} from "./data.js";
 fetch("./data/pokemon/pokemon.json")
   .then((res) => {
     return res.json();
@@ -56,10 +56,17 @@ fetch("./data/pokemon/pokemon.json")
       const sortBy2 = 'z-a'
       const sortBy3 = 'ascending'
       const sortBy4 = 'descending'
-      //console.log(sortBy);
-      console.log(sortOrder);
       mostrar(sortData(arr,sortBy1,sortBy2,sortBy3,sortBy4, sortOrder));
     });
+
+
+    const pokeSearch = document.getElementById("pokeSearch");
+    pokeSearch.addEventListener("input", () => {
+      const condicion = pokeSearch.value;
+      mostrar(buscar(arr,condicion));
+    });
+    
+
   }); //termina el then
 
 const btn = document.getElementById("btn");
