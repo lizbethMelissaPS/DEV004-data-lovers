@@ -1,5 +1,6 @@
 export const filterDataType = (data, condition) => {
   const filtroType = data.filter((data) => data.type.includes(condition));
+  console.log(filtroType);
   return filtroType;
 };
 export const filterDataGeneration = (data, condition) => {
@@ -34,7 +35,7 @@ export const buscar = (data,condicion) => {
 
 /* calcular, nos permitirá hacer cálculos estadísticos básicos
  para ser mostrados de acuerdo a la data proporcionada. */
-export const computeStats = (data) => {
+/* export const computeStats = (data) => {
   return "OMG";
-};
+}; */
 

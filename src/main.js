@@ -1,4 +1,4 @@
-import {filterDataType,filterDataGeneration,sortData,computeStats, buscar} from "./data.js";
+import { filterDataType, filterDataGeneration, sortData, buscar } from "./data.js";
 fetch("./data/pokemon/pokemon.json")
   .then((res) => {
     return res.json();
@@ -13,6 +13,7 @@ fetch("./data/pokemon/pokemon.json")
           (type) => `<p class="${type} type">${type}</p>`
         );
         // creamos un template(string) por cada elemento del array
+
         const card = `
                 <div class="pokeball">
                     <div class="pokemon">
@@ -47,8 +48,6 @@ fetch("./data/pokemon/pokemon.json")
       mostrar(filterDataGeneration(arr, condicion));
     });
 
-    //sortOrder: ascendente , descendente
-    //sortBy: numero, nombre
     const listOrder = document.getElementById("order");
     listOrder.addEventListener("change", () => {
       const sortOrder = listOrder.value;
@@ -56,27 +55,56 @@ fetch("./data/pokemon/pokemon.json")
       const sortBy2 = 'z-a'
       const sortBy3 = 'ascending'
       const sortBy4 = 'descending'
-      mostrar(sortData(arr,sortBy1,sortBy2,sortBy3,sortBy4, sortOrder));
+      mostrar(sortData(arr, sortBy1, sortBy2, sortBy3, sortBy4, sortOrder));
     });
-
 
     const pokeSearch = document.getElementById("pokeSearch");
     pokeSearch.addEventListener("input", () => {
-      const condicion = pokeSearch.value;
-      mostrar(buscar(arr,condicion));
+      const condicion = pokeSearch.value.toLowerCase();
+      mostrar(buscar(arr, condicion));
     });
-    
 
   }); //termina el then
-
+/* 
 const btn = document.getElementById("btn");
 const res = document.getElementById("res");
 btn.addEventListener("click", (e) => {
   const talla = document.getElementById("idTalla").value;
-  if (talla >0.41) {
+  if (talla > 0.41) {
     res.innerHTML = "Congrats! You are taller than pikachu";
   } else {
     res.innerHTML = "You are shorter than pikachu";
   }
   e.preventDefault();
+}); */
+const menu_toggle = document.querySelector(".menu-toggle");
+const sidebar = document.querySelector('.sidebar');
+
+menu_toggle.addEventListener('click', () => {
+  menu_toggle.classList.toggle('is-active');
+  sidebar.classList.toggle('is-active');
 });
+/* abrir modal */
+// Show Modal superposiciónModal
+const modal = document.getElementById("btnModal");
+const res = document.getElementById("res");
+const superposicionModal = document.getElementById("superposicion");
+
+const mostrarModal = () => {
+  superposicionModal.style.display = 'flex';
+  const talla = document.getElementById("idTalla").value;
+  if (talla > 0.41) {
+    res.innerHTML = "Congrats! You are taller than pikachu";
+  } else {
+    res.innerHTML = "You are shorter than pikachu";
+  }
+}
+modal.addEventListener("click", mostrarModal);
+
+// Hide On Blur ocultarModal
+const ocultarModal = (e) => {
+  if (e.target === e.currentTarget) {
+    superposicionModal.style.display = 'none';
+  }
+}
+superposicionModal.addEventListener("click", ocultarModal)
