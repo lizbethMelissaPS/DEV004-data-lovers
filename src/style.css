@@ -4,7 +4,6 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: sans-serif;
 }
 
 .app {
@@ -20,13 +19,13 @@
 	width: 60px;
 	height: 60px;
 	border-radius: 99px;
-	background-color: #2e3047;
+	background-color: var(--clr-blue);
 	cursor: pointer;
 }
 
 .hamburger {
 	position: relative;
-	top: calc(50% - 2px);
+	top: calc(50% - 2px); /* le ponemos -2 para que se centre un poco mas */
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 32px;
@@ -68,51 +67,16 @@
 	flex: 1 1 0;
 	max-width: 300px;
 	padding: 2rem 1rem;
-	background-color: #00fc7e;
-}
-
-.sidebar h3 {
-	color: #ff0000;
-	font-size: 0.75rem;
-	text-transform: uppercase;
-	margin-bottom: 0.5em;
+	background-color: var(--clr-blue);
 }
 
 .sidebar .menu {
 	margin: 0 -1rem;
 }
 
-.sidebar .menu .menu-item {
-	display: block;
-	padding: 1em;
-	color: #c3d100;
-	text-decoration: none;
-	transition: 0.2s linear;
-}
-
-.sidebar .menu .menu-item:hover,
-.sidebar .menu .menu-item.is-active {
-	color: #3bba9c;
-	border-right: 5px solid #3bba9c;
-}
-
-.sidebar .menu .menu-item:hover {
-	border-right: 5px solid #3bba9c;
-}
-
 .content {
 	flex: 1 1 0;
 	padding: 2rem;
-}
-
-.content h1 {
-	color: #001aff;
-	font-size: 2.5rem;
-	margin-bottom: 1rem;
-}
-
-.content p {
-	color: #707793;
 }
 
 @media (max-width: 1024px) {
@@ -143,22 +107,12 @@
 	}
 }
 /* fin de adadtacion */
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-} */
-/* body {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  } */
 
 :root {
     --clr-black: #1c1c1c;
     --clr-gray: #ececec;
     --clr-white: #f7f7f7;
+    --clr-blue: #125D9E; 
 
     --type-normal: #A8A878;
     --type-fire: #F08030;
@@ -180,31 +134,6 @@
     --type-fairy: #F0B6BC;
 }
 
-/* nav{
-    position: fixed;
-    left: 0;
-    width: 180px;
-    height: 100%;
-    background-color: rgb(60, 60, 179);
-} */
-
-
-/* main {
-    padding: 2rem;
-    max-width: 1000px;
-    /*para que solo me aparezca 3 imagenes*
-    margin: 0 auto;
-    
-} */
-
-/* .var{
-    position: absolute;
-    left: 0%;
-    right: 0%;
-    top: 31.58%;
-    bottom: 0%;
-} */
-
 .lista-pokemon-todos {
     display: grid;
     grid-template-columns: 1fr;
@@ -220,10 +149,7 @@
     .lista-pokemon-todos {
         grid-template-columns: 1fr 1fr 1fr;
     }
-}
-
-/*esto es para que a partir de 700px se cambie a tres columnas  */
-
+}/*esto es para que a partir de 700px se cambie a tres columnas  */
 
 .pokeball {
     border-radius: 50%;
@@ -243,7 +169,6 @@
     align-items: center;
     text-align: center;
 }
-
 
 .name-container {
     align-items: center;
@@ -381,7 +306,7 @@
     align-items: center;
     justify-content: center;
   }
-  #superposicion #modal {
+#superposicion #modal {
     max-width: 650px;
     width: 100%;
     background: rgb(250, 247, 247);
@@ -390,6 +315,5 @@
     flex-direction: column;
     padding:10px;
     border-radius: 5%;
-  }
-  /* fin de modal */
-  
+}
+/* fin de modal */

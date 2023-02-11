@@ -1,6 +1,5 @@
 export const filterDataType = (data, condition) => {
   const filtroType = data.filter((data) => data.type.includes(condition));
-  console.log(filtroType);
   return filtroType;
 };
 export const filterDataGeneration = (data, condition) => {

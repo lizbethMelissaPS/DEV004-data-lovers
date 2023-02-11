@@ -65,18 +65,7 @@ fetch("./data/pokemon/pokemon.json")
     });
 
   }); //termina el then
-/* 
-const btn = document.getElementById("btn");
-const res = document.getElementById("res");
-btn.addEventListener("click", (e) => {
-  const talla = document.getElementById("idTalla").value;
-  if (talla > 0.41) {
-    res.innerHTML = "Congrats! You are taller than pikachu";
-  } else {
-    res.innerHTML = "You are shorter than pikachu";
-  }
-  e.preventDefault();
-}); */
+
 const menu_toggle = document.querySelector(".menu-toggle");
 const sidebar = document.querySelector('.sidebar');
 
