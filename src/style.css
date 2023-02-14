@@ -1,13 +1,100 @@
+
+/* inicio de adaptacion */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
+
+.app {
+	display: flex;
+	min-height: 100vh;
+}
+
+.menu-toggle {
+	display: none;
+	position: fixed;
+	top: 2rem;
+	right: 2rem;
+	width: 60px;
+	height: 60px;
+	border-radius: 99px;
+	background-color: var(--clr-blue);
+	cursor: pointer;
+}
+
+.hamburger {
+	position: relative;
+	top: calc(50% - 2px); /* le ponemos -2 para que se centre un poco mas */
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 32px;
+}
+
+.hamburger > span,
+.hamburger > span::before,
+.hamburger > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 99px;
+  background-color: #FFF;
+  transition-duration: .25s;
+}
+
+.hamburger > span::before {
+  content: '';
+  top: -8px;
+}
+.hamburger > span::after {
+  content: '';
+  top: 8px;
+}
+.menu-toggle.is-active .hamburger > span {
+  transform: rotate(45deg);
+}
+.menu-toggle.is-active .hamburger > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+.menu-toggle.is-active .hamburger > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+.sidebar {
+	flex: 1 1 0;
+	max-width: 300px;
+	/* padding: 2rem 1rem; */
+	/* background-color: var(--clr-blue); */
+    
+}
+.menu {
+	flex: 1 1 0;
+	max-width: 300px;
+	padding: 2rem 1rem;
+	background-color: var(--clr-blue);
+    position: sticky;
+    height: 100%;
+}
+.sidebar .menu {
+	margin: 0 -1rem;
+     position: fixed; 
+}
+
+.content {
+	flex: 1 1 0;
+	padding: 7rem 0 0 0;
+}
+
+/* fin de adadtacion */
 
 :root {
     --clr-black: #1c1c1c;
     --clr-gray: #ececec;
     --clr-white: #f7f7f7;
+    --clr-blue: #125D9E; 
 
     --type-normal: #A8A878;
     --type-fire: #F08030;
@@ -29,59 +116,24 @@
     --type-fairy: #F0B6BC;
 }
 
-nav{
-    position: fixed;
-    left: 0;
-    width: 180px;
-    height: 100%;
-    background-color: rgb(60, 60, 179);
-}
-
-
-main{
-    padding: 2rem;
-    max-width: 1000px; /*para que solo me aparezca 3 imagenes*/
-    margin: 0 auto; 
-}
-
-/* .searchBox{
-    position: absolute;
-    left: 0%;
-    right: 0%;
-    top: 31.58%;
-    bottom: 0%;
-} */
-
-.lista-pokemon-todos{
+.lista-pokemon-todos {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem; /*para separarlos entre si*/
 }
 
-@media screen and (min-width: 450px){
-    .lista-pokemon-todos{
-        grid-template-columns: 1fr 1fr;
-    } 
-} /*esto es para que a partir de 450px se cambie a dos columnas  */
 
-@media screen and (min-width: 700px){
-    .lista-pokemon-todos{
-        grid-template-columns: 1fr 1fr 1fr;
-    } 
-} /*esto es para que a partir de 700px se cambie a tres columnas  */
-
-
-.pokeball{
+.pokeball {
     border-radius: 50%;
     background-color: var(--clr-white);
-    box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, .25);
+    box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, 0.425);
     padding-block: 1rem;
-    text-transform: uppercase; /*para pasar todo a mayuscula*/
+    text-transform: uppercase;/*para pasar todo a mayuscula*/
     height: 245px;
     width: 245px;
 }
 
-.pokemon{
+.pokemon {
     display: flex;
     flex-direction: column;
     gap: .5rem;
@@ -90,37 +142,36 @@ main{
     text-align: center;
 }
 
-
-.name-container{
+.name-container {
     align-items: center;
     column-gap: 2rem;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.name-container{
+.name-container {
     font-size: 1rem;
 }
-
-.type-container{
+/*  color de tipo*/
+.type-container {
     display: flex;
     gap: .5rem;
     font-size: .75rem;
     justify-content: center;
 }
 
-.type{
+.type {
     padding: .25rem .5rem;
     border-radius: 100vmax;
 }
 
-.img-container img{
+.img-container img {
     width: 100%;
     max-width: 10rem;
     height: 100%;
 }
 
-.img-container{
+.img-container {
     padding-inline: 1rem;
     display: flex;
     justify-content: center;
@@ -214,4 +265,173 @@ main{
 .fairy {
     background-color: var(--type-fairy);
     color: var(--clr-black);
+}
+/* fin color de tipos */
+
+/* modal */
+#superposicion {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background: hsla(210, 27%, 55%, 0.212);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+#superposicion #modal {
+    max-width: 650px;
+    width: 100%;
+    background: rgb(250, 247, 247);
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+    border-radius: 5%;
+    justify-content: center;
+    font-family: Impact, Haettenschweile0r, 'Arial Narrow Bold', sans-serif;
+    color: var(--type-fighting);
+}
+/* fin de modal */
+
+.logo img {
+    width: 100%;
+    max-width: 10rem;
+    height: 100%;
+    filter: drop-shadow(6px 6px 16px rgba(0, 0, 0, 0.25));
+}
+    
+.logo {
+    padding-inline: 10px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.filtro{
+    position: center ;
+    display: flex;
+    justify-content: center;
+}  
+
+.selector-box{
+    width: 200px;
+    min-height: 35px;
+    background: #cbe7ff;
+    border-radius: 10px;
+    border: 2px solid #2196f3;
+    outline: none;
+    padding: 0 10px;
+    width: 70%;
+    margin-top: 20px;
+    appearance: none;
+} 
+
+.selector-box::part(listbox){
+    padding: .5em;
+    margin: .5em 0 0 .2em;
+    background-color: #01060a;
+    border-radius: 10px;
+}
+
+option{
+    padding: .5em;
+} 
+
+option:hover{
+        background-color: var(--clr-black);
+    }
+
+
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 0 0 0;
+}
+
+.talla-container{
+    display: flex;
+    justify-content: center;
+    position: center;
+}
+
+.talla-container input{
+    width: 200px;
+    min-height: 35px;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+    outline: none;
+    padding: 0 10px;
+    width: 70%;
+    appearance: none;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    }
+
+.talla-container button{
+    display: flex;
+    flex-direction: row;
+/*     font-size: .75rem; */
+    align-items: center;
+    padding: 6px 12px;
+    position: absolute;
+    width: 100px;
+    height: 32px;
+    left: 180px;
+    top: 559px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--type-electric);
+    color: var(--clr-black);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.search-box{
+    width: 680px;
+    height: 35px;
+    border: 0.75px solid #2980b9;
+    border-radius: 2.99px;
+    /* position: absolute;
+    display: flex;
+    top: 2rem;
+    left: 330px;
+    padding: 0px 10px;
+	cursor: pointer; */
+    display: flex;
+    
+}
+
+
+.order-box {
+    width: 200px;
+    min-height: 35px;
+    background: #ffffff;
+    border-radius: 2.99px;
+    border:  0.75px solid #2980b9;
+    outline: none;
+   
+    /*
+    appearance: none; 
+    position: absolute;
+    padding: 0 10px;
+	top: 2rem; /*
+	left: 77%; */
+    float: right;
+}
+
+.search-ordenar{
+    position: fixed; 
+    top: 2rem; 
+	width: 100%;
+	display:flex;
+    margin: 5px;
+    padding: 0px 10px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    flex-direction: row;
+    
 }
