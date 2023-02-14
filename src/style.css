@@ -66,13 +66,20 @@
 .sidebar {
 	flex: 1 1 0;
 	max-width: 300px;
-	padding: 2rem 1rem;
-	background-color: var(--clr-blue);
+	/* padding: 2rem 1rem; */
+	/* background-color: var(--clr-blue); */
+    
 }
-
+.menu {
+	flex: 1 1 0;
+	max-width: 300px;
+	/* padding: 2rem 1rem; */
+	background-color: var(--clr-blue);
+    position: sticky;
+}
 .sidebar .menu {
 	margin: 0 -1rem;
-    position: fixed;
+     position: fixed; 
 }
 
 .content {
@@ -307,6 +314,7 @@
     display: none;
     align-items: center;
     justify-content: center;
+    text-align: center;
   }
 #superposicion #modal {
     max-width: 650px;
@@ -317,6 +325,9 @@
     flex-direction: column;
     padding:10px;
     border-radius: 5%;
+    justify-content: center;
+    font-family: Impact, Haettenschweile0r, 'Arial Narrow Bold', sans-serif;
+    color: var(--type-fighting);
 }
 /* fin de modal */
 
@@ -447,7 +458,7 @@ option:hover{
 }
 
 .search-ordenar{
-    position: absolute; /* Barra lateral fija (permanecer en su lugar en el desplazamiento) */
+    position: fixed; /* Barra lateral fija (permanecer en su lugar en el desplazamiento) */
     top: 2rem; 
 	width: 100%;
 	display:flex;

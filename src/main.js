@@ -83,9 +83,14 @@ const mostrarModal = () => {
   superposicionModal.style.display = 'flex';
   const talla = document.getElementById("idTalla").value;
   if (talla > 0.41) {
-    res.innerHTML = "Congrats! You are taller than pikachu";
+
+    const tall = `<h1>Congrats! You are taller than pikachu!</h1>
+    <img src="./images/exito.gif" alt=""/>`
+    res.innerHTML = tall;
   } else {
-    res.innerHTML = "You are shorter than pikachu";
+    const short = `<h1>You are shorter than pikachu!</h1>
+    <img src="./images/pikachu-sad.gif" alt=""/>`
+    res.innerHTML = short;
   }
 }
 modal.addEventListener("click", mostrarModal);
