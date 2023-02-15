@@ -32,6 +32,7 @@
 	}
 	.content {
 		padding-top: 8rem;
+        margin: 0 auto
 	}
 	.sidebar {
 		position: fixed;
@@ -46,7 +47,7 @@
 	.sidebar.is-active {
 		left: 0;
 	}
-    
+
 }
 
 @media (max-width: 600px){
@@ -60,13 +61,14 @@
     .search-ordenar{
         justify-items: center;
         display: grid;
-
     }
 
     .order-box{
         width: 180px;
     }
-    
+    .lista-pokemon-todos{
+        padding: 0 2rem 0 3rem;
+    }
 }
 
 

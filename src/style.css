@@ -70,6 +70,7 @@
 	max-width: 300px;
 	/* padding: 2rem 1rem; */
 	/* background-color: var(--clr-blue); */
+    margin: 0 auto;
     
 }
 .menu {
@@ -121,7 +122,7 @@
 .lista-pokemon-todos {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem; /*para separarlos entre si*/
+    gap: 1.5rem; /*para separarlos entre si*/
 }
 
 
@@ -152,14 +153,20 @@
 }
 
 .name-container {
-    font-size: 1rem;
+    font-size: .95rem;
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
 }
 /*  color de tipo*/
 .type-container {
     display: flex;
     gap: .5rem;
-    font-size: .75rem;
+    font-size: .95rem;
     justify-content: center;
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
 }
 
 .type {
@@ -291,8 +298,12 @@
     padding:10px;
     border-radius: 5%;
     justify-content: center;
-    font-family: Impact, Haettenschweile0r, 'Arial Narrow Bold', sans-serif;
     color: var(--type-fighting);
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
+    font-size: .95rem;
+    
 }
 /* fin de modal */
 
@@ -318,14 +329,19 @@
 .selector-box{
     width: 200px;
     min-height: 35px;
-    background: #cbe7ff;
-    border-radius: 10px;
-    border: 2px solid #2196f3;
+    background: var(--clr-white);
+    border-radius: 2.99px;
+    border: 0.75px solid #2196f3;
+    color: #44484b;
     outline: none;
     padding: 0 10px;
     width: 70%;
     margin-top: 20px;
     appearance: none;
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
+    font-size: .95rem;
 } 
 
 .selector-box::part(listbox){
@@ -340,8 +356,8 @@ option{
 } 
 
 option:hover{
-        background-color: var(--clr-black);
-    }
+    background-color: var(--clr-black);
+}
 
 
 
@@ -350,7 +366,6 @@ option:hover{
     text-align: center;
     justify-content: center;
     align-items: center;
-    
     padding: 1rem 0 0 0;
     
 }
@@ -409,6 +424,10 @@ option:hover{
     height: 35px;
     border: 0.75px solid #2980b9;
     border-radius: 2.99px;
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
+    font-size: .95rem;
     /* position: absolute;
     display: flex;
     top: 2rem;
@@ -427,6 +446,12 @@ option:hover{
     border-radius: 2.99px;
     border:  0.75px solid #2980b9;
     outline: none;
+    color: grey;
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
+    font-size: .95rem;
+    
    
     /*
     appearance: none; 
@@ -448,5 +473,4 @@ option:hover{
     flex-wrap: wrap;
     gap: 0.75rem;
     flex-direction: row;
-    
 }
