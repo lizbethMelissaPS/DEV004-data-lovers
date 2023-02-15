@@ -51,11 +51,13 @@ fetch("./data/pokemon/pokemon.json")
     const listOrder = document.getElementById("order");
     listOrder.addEventListener("change", () => {
       const sortOrder = listOrder.value;
-      const sortBy1 = 'a-z'
-      const sortBy2 = 'z-a'
-      const sortBy3 = 'ascending'
-      const sortBy4 = 'descending'
-      mostrar(sortData(arr, sortBy1, sortBy2, sortBy3, sortBy4, sortOrder));
+      // const sortBy1 = 'a-z'
+      // const sortBy2 = 'z-a'
+      // const sortBy3 = 'ascending'
+      // const sortBy4 = 'descending'
+      mostrar(sortData(arr, sortOrder));
+      
+      // mostrar(sortData(arr, sortBy1, sortBy2, sortBy3, sortBy4, sortOrder));
     });
 
     const pokeSearch = document.getElementById("pokeSearch");

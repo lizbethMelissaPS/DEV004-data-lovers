@@ -1,4 +1,4 @@
-import { filterDataType, filterDataGeneration, buscar } from '../src/data.js';
+import { filterDataType, filterDataGeneration, buscar, sortData } from '../src/data.js';
 
 describe("filter TYPE POKEMON", () => {
   it("is a function", () => {
@@ -921,6 +921,35 @@ describe("buscar pokemon", () => {
     ]);
   });
 });
+
+
+describe("que ordene pokemones", () => {
+  it("is a function", () => {
+    expect(typeof sortData).toBe("function");
+  });
+
+  it("return en orden alfabetico", () => {
+    const ejemplo2 = [
+      {
+        "name": "chikorita",
+      },
+      {
+        "name": "bulbasaur",
+      },
+      
+    ];
+    expect(sortData(ejemplo2)).toEqual([
+      {
+        "name": "bulbasaur",
+      },
+      {
+        "name": "chikorita",
+      },
+    ]);
+  });
+});
+
+
 
 // describe('sortData', () => {
 //   it('is a function', () => {
