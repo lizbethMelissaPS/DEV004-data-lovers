@@ -1,5 +1,7 @@
 
 /* inicio de adaptacion */
+
+
 * {
 	margin: 0;
 	padding: 0;
@@ -345,11 +347,24 @@ option:hover{
 
 .text {
     display: flex;
+    text-align: center;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 2rem 0 0 0;
+    
+    padding: 1rem 0 0 0;
+    
 }
+
+.text h1{
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    color: var(--clr-white);
+    
+}
+
 
 .talla-container{
     display: flex;
