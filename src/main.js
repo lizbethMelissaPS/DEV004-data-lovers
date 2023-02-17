@@ -13,7 +13,7 @@ fetch("./data/pokemon/pokemon.json")
 function obtenerBackCard(x) {
   return `
 <div class="pokemon-info">
-  <div class="">
+  <div class="prueba">
     <div class="about">
     <h3>ABOUT</h3>
     <p>${x.about}</p>
@@ -56,16 +56,17 @@ function rotarPokeball() {
   const pokeball = document.querySelectorAll(".pokeball")
   pokeball.forEach((element) => {
     element.addEventListener('click', function (e) {
+      
       //element.classList.toggle('is-flipped');
       if (element.classList.contains("front")) {
         element.classList.remove("front")
         element.classList.add("back")
         element.querySelector(".pokemon").style.display = "none"
-        element.querySelector(".pokemon-info").style.display = "block"
+        element.querySelector(".pokemon-info").style.display = "flex"
       } else {
         element.classList.remove("back")
         element.classList.add("front")
-        element.querySelector(".pokemon").style.display = "block"
+        element.querySelector(".pokemon").style.display = "flex"
         element.querySelector(".pokemon-info").style.display = "none"
       }
       e.preventDefault;
@@ -116,11 +117,11 @@ const mostrarModal = () => {
   if (talla > 0.41) {
 
     const tall = `<h1>Congrats! You are taller than pikachu!</h1>
-    <img src="./images/exito.gif" alt=""/>`
+    <img class="pikachu"  src="./images/exito.gif" alt=""/>`
     res.innerHTML = tall;
   } else {
-    const short = `<h1>You are shorter than pikachu!</h1>
-    <img src="./images/pikachu-sad.gif" alt=""/>`
+    const short = `<h1>You are shorter than pikachu!</h1> 
+    <img class="pikachu" src="./images/pikachu-sad.gif" alt=""/>`
     res.innerHTML = short;
   }
 }
