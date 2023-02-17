@@ -490,9 +490,13 @@ option:hover{
 
 .pokemon-info{
     display: none;
+}
+/* .pokemon-info{
+    display: none;
     flex-direction: column;
     gap: .5rem;
     padding-inline: 1rem;
     align-items: center;
     text-align: center;
-}
+} */
+
