@@ -288,10 +288,11 @@
     justify-content: center;
     text-align: center;
     z-index: 2;
-  }
+}
+  
 #superposicion #modal {
     max-width: 650px;
-    width: 100%;
+    width: auto;
     background: rgb(250, 247, 247);
     height: 400px;
     display: flex;
