@@ -12,9 +12,9 @@ fetch("./data/pokemon/pokemon.json")
 
 function obtenerBackCard(x) {
   return `
-<div class="pokemon-info">
-  <div class="prueba">
-    <div class="about">
+<div class="pokemon-info" id="superposicion">
+    <div id="modal">
+
     <h3>ABOUT</h3>
     <p>${x.about}</p>
     </div>
