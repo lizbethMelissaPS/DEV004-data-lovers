@@ -288,8 +288,10 @@
     justify-content: center;
     text-align: center;
     z-index: 2;
+    left: 0;
+    top: 0;
 }
-  
+
 #superposicion #modal {
     max-width: 650px;
     width: auto;
@@ -306,7 +308,6 @@
     font-weight: 400;
     font-size: .95rem;
     /* overflow-y: scroll; es para que se haga scroll dentro del modal*/
-    
 }
 
 .pikachu{
@@ -500,3 +501,56 @@ option:hover{
     text-align: center;
 } */
 
+
+#modal-info {
+    max-width: 650px;
+    width: auto;
+    background: rgb(250, 247, 247);
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+    border-radius: 5%;
+    justify-content: center;
+    color: var(--clr-black);
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 400;
+    /* font-size: .95rem; */
+    overflow-y: scroll; /* es para que se haga scroll dentro del modal*/
+    text-transform: capitalize; /*Para cambiar la primera letra mayuscula*/
+}
+
+#modal-info h1{
+    font-size: 75px;
+    font-family: 'League Spartan';
+    font-style: normal;
+    font-weight: 700;
+}
+
+/* 
+.contenedor{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem; /*para separarlos entre si*/
+}
+
+.box{
+    background-color: var(--clr-white);
+    padding-block: 1rem;
+}
+
+.box-data{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding-inline: 1rem;
+    
+} */
+
+/* 
+}
+
+.pokemon {
+
+} */
