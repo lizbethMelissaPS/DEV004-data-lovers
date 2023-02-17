@@ -1,73 +1,102 @@
 import { filterDataType, filterDataGeneration, sortData, buscar } from "./data.js";
+let arr;
 fetch("./data/pokemon/pokemon.json")
   .then((res) => {
     return res.json();
   })
   .then((data) => {
-    const arr = data.pokemon;
-    const mostrar = (arr) => {
-      let templateListPoke = "";
-      // recorremos nuestro array con forEach
-      arr.forEach((element) => {
-        const listTypes = element.type.map(
-          (type) => `<p class="${type} type">${type}</p>`
-        );
-        // creamos un template(string) por cada elemento del array
-
-        const card = `
-                <div class="pokeball">
-                    <div class="pokemon">
-                        <div class="name-container">
-                            <p class="num">#${element.num}</p>
-                            <p class="name">${element.name}</p>
-                        </div>
-                        <div class="img-container">
-                            <img src='${element.img}' alt="${element.name}"/>
-                        </div>
-                        <div class="type-container">
-                            ${listTypes.join("")}
-                        </div>
-                    </div>
-                </div>
-          `;
-        templateListPoke += card;
-      });
-      document.getElementById("listaPokemon").innerHTML = templateListPoke;
-    };
+    arr = data.pokemon;
     mostrar(arr);
+  });
+/////
 
-    const listType = document.getElementById("filterListType");
-    listType.addEventListener("change", () => {
-      const condicion = listType.value;
-      mostrar(filterDataType(arr, condicion));
-    });
+function obtenerBackCard(x) {
+  return `
+<div class="pokemon-info">
+  <div class="">
+    <div class="about">
+    <h3>ABOUT</h3>
+    <p>${x.about}</p>
+    </div>
+  </div>
+</div>
+  `
+}
 
-    const listGeneration = document.getElementById("filterListGeneration");
-    listGeneration.addEventListener("change", () => {
-      const condicion = listGeneration.value;
-      mostrar(filterDataGeneration(arr, condicion));
-    });
+function obtnerFrontCard(element) {
+  return `<div class="pokemon">
+            <div class="name-container">
+              <p class="num">#${element.num}</p>
+              <p class="name">${element.name}</p>
+            </div>
+            <div class="img-container">
+              <img src='${element.img}' alt="${element.name}"/>
+            </div>
+            <div class="type-container">
+              ${element.type.map((type) => `<p class="${type} type">${type}</p>`).join("")}
+            </div>
+          </div>`
+}
 
-    const listOrder = document.getElementById("order");
-    listOrder.addEventListener("change", () => {
-      const sortOrder = listOrder.value;
-      // const sortBy1 = 'a-z'
-      // const sortBy2 = 'z-a'
-      // const sortBy3 = 'ascending'
-      // const sortBy4 = 'descending'
-      mostrar(sortData(arr, sortOrder));
-      
-      // mostrar(sortData(arr, sortBy1, sortBy2, sortBy3, sortBy4, sortOrder));
-    });
+const mostrar = (arr) => {
+  let templateListPoke = "";
+  // recorremos nuestro array con forEach
+  arr.forEach((pokemon) => {
+    // creamos un template(string) por cada elemento del array
+    const card = `<div class="pokeball front">
+                    ${obtnerFrontCard(pokemon)}
+                    ${obtenerBackCard(pokemon)}
+                  </div>`;
+    templateListPoke += card;
+  });
+  document.getElementById("listaPokemon").innerHTML = templateListPoke;
+  rotarPokeball();
+};
+function rotarPokeball() {
+  const pokeball = document.querySelectorAll(".pokeball")
+  pokeball.forEach((element) => {
+    element.addEventListener('click', function (e) {
+      //element.classList.toggle('is-flipped');
+      if (element.classList.contains("front")) {
+        element.classList.remove("front")
+        element.classList.add("back")
+        element.querySelector(".pokemon").style.display = "none"
+        element.querySelector(".pokemon-info").style.display = "block"
+      } else {
+        element.classList.remove("back")
+        element.classList.add("front")
+        element.querySelector(".pokemon").style.display = "block"
+        element.querySelector(".pokemon-info").style.display = "none"
+      }
+      e.preventDefault;
+    })
+  })
+}
 
-    const pokeSearch = document.getElementById("pokeSearch");
-    pokeSearch.addEventListener("input", () => {
-      const condicion = pokeSearch.value.toLowerCase();
-      mostrar(buscar(arr, condicion));
-    });
+const listType = document.getElementById("filterListType");
+listType.addEventListener("change", () => {
+  const condicion = listType.value;
+  mostrar(filterDataType(arr, condicion));
+});
 
-  }); //termina el then
+const listGeneration = document.getElementById("filterListGeneration");
+listGeneration.addEventListener("change", () => {
+  const condicion = listGeneration.value;
+  mostrar(filterDataGeneration(arr, condicion));
+});
 
+const listOrder = document.getElementById("order");
+listOrder.addEventListener("change", () => {
+  const sortOrder = listOrder.value;
+  mostrar(sortData(arr, sortOrder));
+});
+
+const pokeSearch = document.getElementById("pokeSearch");
+pokeSearch.addEventListener("input", () => {
+  const condicion = pokeSearch.value.toLowerCase();
+  mostrar(buscar(arr, condicion));
+});
+////
 const menu_toggle = document.querySelector(".menu-toggle");
 const sidebar = document.querySelector('.sidebar');
 
@@ -104,3 +133,5 @@ const ocultarModal = (e) => {
   }
 }
 superposicionModal.addEventListener("click", ocultarModal)
+/* fin modal */
+
