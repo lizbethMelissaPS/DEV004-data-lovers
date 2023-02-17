@@ -15,25 +15,13 @@ function obtenerBackCard(x) {
   return `
   <div class="pokemon-info" id="superposicion">
     <div id="modal-info">
-      <h1> #${x.num} ${x.name} </h1>
       
+      <h1> #${x.num} ${x.name} </h1>
       <div class="contenedor">
         <div class="box">
           <div class="box-data">
               <h3>About</h3>
               <p>${x.about}</p>
-          </div>
-        </div>
-        <div class="resistant">
-          <h3>Resistant</h3>
-          <div class="type-container">
-            ${x.resistant.map((type) => `<p class="${type} type">${type}</p>`).join("")}
-          </div>
-        </div>
-        <div class="weakness">
-          <h3>Weaknesses</h3>
-          <div class="type-container">
-            ${x.weaknesses.map((type) => `<p class="${type} type">${type}</p>`).join("")}
           </div>
         </div>
         <div class="size">
@@ -42,6 +30,12 @@ function obtenerBackCard(x) {
           <p>${x.size.height}</p>
           <h4>weight</h4>
           <p>${x.size.weight}</p>
+        </div>
+        <div class="resistant">
+          <h3>Resistant</h3>
+          <div class="type-container">
+            ${x.resistant.map((type) => `<p class="${type} type">${type}</p>`).join("")}
+          </div>
         </div>
         <div class="stats">
           <h3>Statistics</h3>
@@ -68,6 +62,14 @@ function obtenerBackCard(x) {
                     </tr>
           </table>
         </div>
+        <div class="weakness">
+          <h3>Weaknesses</h3>
+          <div class="type-container">
+            ${x.weaknesses.map((type) => `<p class="${type} type">${type}</p>`).join("")}
+          </div>
+        </div>
+        
+        
       
       </div>
     </div>
