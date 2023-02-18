@@ -523,34 +523,70 @@ option:hover{
 
 #modal-info h1{
     font-size: 75px;
-    font-family: 'League Spartan';
-    font-style: normal;
     font-weight: 700;
 }
 
-/* 
+
 .contenedor{
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem; /*para separarlos entre si*/
+    grid-template-columns: 1fr 1fr;
+    padding: 0 1rem 0 1rem;
+    gap: 1.1rem;
 }
 
-.box{
-    background-color: var(--clr-white);
-    padding-block: 1rem;
-}
 
-.box-data{
+.box-data-d{
     display: flex;
     flex-direction: column;
     gap: .5rem;
     padding-inline: 1rem;
-    
-} */
-
-/* 
+    text-align: right;
 }
 
-.pokemon {
+.box-data-iz{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding-inline: 1rem;
+    text-align: left;
+}
+.box-data-dd{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding-inline: 1rem;
+    text-align: right;
+    grid-row: 2 / span 2 ;
+    grid-column: 2 / span 1; 
+    margin-top: 5%;
+}
 
-} */
+.type-info {
+    display: flex;
+    gap: .5rem;
+    font-size: .95rem;
+    flex-wrap: wrap
+}
+
+.size{
+    display: inline-flex;
+    column-gap: 1.2rem;
+    justify-content: flex-end;
+    margin-top: 5%;
+}
+
+.size h4{
+    margin-bottom: 15%;
+}
+
+table th{
+    border-right: solid;
+    border-color: #ff0000;
+    padding-left: 35%;
+    text-align: left;
+}
+
+table td{
+    padding-left: 5%;
+}
+

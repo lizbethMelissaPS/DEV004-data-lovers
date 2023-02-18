@@ -18,28 +18,37 @@ function obtenerBackCard(x) {
       
       <h1> #${x.num} ${x.name} </h1>
       <div class="contenedor">
-        <div class="box">
-          <div class="box-data">
+
+          <div class="box-data-iz">
               <h3>About</h3>
               <p>${x.about}</p>
           </div>
-        </div>
-        <div class="size">
+
+        <div class="box-data-d">
           <h3>Size</h3>
+          <div class="size">
+          <div class="height">
           <h4>height</h4>
-          <p>${x.size.height}</p>
+            <p>${x.size.height}</p>
+          </div>
+          <div class="weight">
           <h4>weight</h4>
-          <p>${x.size.weight}</p>
+            <p>${x.size.weight}</p>
+          </div>
+            
+            
+          </div>
+          
         </div>
-        <div class="resistant">
+        <div class="box-data-iz">
           <h3>Resistant</h3>
-          <div class="type-container">
+          <div class="type-info">
             ${x.resistant.map((type) => `<p class="${type} type">${type}</p>`).join("")}
           </div>
         </div>
-        <div class="stats">
+        <div class="box-data-dd">
           <h3>Statistics</h3>
-          <table class='cardback__box3__table'>
+          <table>
                     <tr class='cardback__box3__table--data'>
                         <th>attack</th>
                         <td>${x.stats["base-attack"]}</td>
@@ -62,9 +71,9 @@ function obtenerBackCard(x) {
                     </tr>
           </table>
         </div>
-        <div class="weakness">
+        <div class="box-data-iz">
           <h3>Weaknesses</h3>
-          <div class="type-container">
+          <div class="type-info">
             ${x.weaknesses.map((type) => `<p class="${type} type">${type}</p>`).join("")}
           </div>
         </div>
