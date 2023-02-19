@@ -15,13 +15,11 @@ function obtenerBackCard(x) {
   return `
   <div class="pokemon-info" id="superposicion">
     <div id="modal-info">
-
+    <div class="${x.type[0]} type cuadro-derecho"></div>
+    <div class="${x.type[0]} type cuadro-izquierdo"></div>
     <img class="img-ball" src="./images/Pokeball.png" alt=""></img> 
     
     <img class="img-p" src="${x.img} " alt="${x.name}" >
-      <div class="img-info" > 
-          
-      </div>
     
       <h1> #${x.num} ${x.name} </h1>
       <div class="contenedor">

@@ -516,15 +516,13 @@ option:hover{
     font-family: 'League Spartan';
     font-style: normal;
     font-weight: 400;
-    /* font-size: .95rem; */
-    overflow-y: scroll; /* es para que se haga scroll dentro del modal*/
     text-transform: capitalize; /*Para cambiar la primera letra mayuscula*/
 }
 
 #modal-info h1{
     font-size: 75px;
     font-weight: 700;
-    z-index: 1;
+    z-index: 2;
 }
 
 
@@ -552,6 +550,13 @@ option:hover{
     padding-inline: 1rem;
     text-align: left;
 }
+
+.box-data-iz p{
+    text-transform: initial;
+}
+
+
+
 .box-data-dd{
     display: flex;
     flex-direction: column;
@@ -596,7 +601,7 @@ table td{
     
 
 .img-p{
-    margin: 32% 25% 25% 17%;
+    margin: 29.5% 1% 25% 13%;
     position: absolute;
     width: 300px;
     filter: drop-shadow(6px 6px 16px rgba(0, 0, 0, 0.25));
@@ -607,10 +612,21 @@ table td{
     position: absolute;
     display: flex;
     padding-right: 15%;
+    clip-path: inset(25px 50px 54px 134px);
 }
 
-.cuadro{
-    width: 100% ;
-    margin: 25%;
+.cuadro-derecho{
     position: absolute;
+    width: 74px;
+    height: 26px;
+    margin: 8% 1% 31% 40%;
+    clip-path: inset(0px 10px 0px 0px);
+}
+.cuadro-izquierdo{
+    position: absolute;
+    width: 74px;
+    height: 26px;
+    margin: 10% 1% 33% -1.5%;
+    clip-path: inset(0px 0px 0px 11.8px);
+    z-index: 2;
 }

@@ -1,3 +1,20 @@
+@media (max-width: 1366px) {
+    .img-p{
+        /* margin: 33% 1% 25% 18%; */
+    }
+    
+    .img-ball{
+        margin: 31% 5% 29% -10.5%;
+    }
+    
+    .cuadro-derecho{
+        margin: 1% 1% 24% 42.7%;
+    }
+    .cuadro-izquierdo{
+        margin: 1% 1% 24% -1.61%;
+    }
+}
+
 @media (max-width: 1024px) {
 	.sidebar {
 		max-width: 200px;
@@ -6,6 +23,21 @@
     .search-box{
         width: 400px;
         margin-left: 10%;
+    }
+
+    .img-p{
+        margin: 33% 1% 25% 18%;
+    }
+    
+    .img-ball{
+        margin: 31% 5% 28% -14%;
+    }
+    
+    .cuadro-derecho{
+        margin: 1% 1% 33% 56.27%;
+    }
+    .cuadro-izquierdo{
+        margin: 1% 1% 33% -2.15%;
     }
 }
 
@@ -48,13 +80,28 @@
 		left: 0;
 	}
 
+    .img-p{
+        margin: 33% 1% 25% 23.5%
+    }
+    
+    .img-ball{
+        clip-path: inset(30px 50px 46px 69px); /* para cortar la imagen */
+        margin: 27% 1% 25% -10%;
+    }
+    
+    .cuadro-derecho{
+        margin: 1% 1% 39.9% 73.63%;
+    }
+    .cuadro-izquierdo{
+        margin: 1% 1% 40% -2.7%;
+    }
+
 }
 
 @media (max-width: 600px){
     .search-box{
         width: 200px;
     }
-    
 }
 
 @media (max-width: 425px){
@@ -67,16 +114,82 @@
         width: 180px;
     }
     .lista-pokemon-todos{
-        padding: 0 2rem 0 3rem;
+        padding: 0 2rem 0 4.9rem;
     }
-}
 
+    .img-p{
+        display: none;
+    }
+    
+    .img-ball{
+        display: none;
+    }
+    
+    .cuadro-derecho{
+        margin: 1% 1% 70% 82.5%;
+    }
+    .cuadro-izquierdo{
+        margin: 1% 1% 70% -5.1%;
+        z-index: 1;
+    }
+
+    .contenedor{
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        row-gap: 1.5rem;
+        padding-bottom: 6%;
+    }
+
+    #modal-info h1{
+        font-size: 40px;
+        padding: 18rem 0 1.2rem 0;
+    }
+    #modal-info {
+        overflow-y: scroll; /* para hacer scroll en el modal */
+    }
+
+    .box-data-d {
+        text-align: center;
+        margin: 0;
+    }
+    .box-data-dd {
+        text-align: center;
+        margin: 0;
+    }
+    .box-data-iz {
+        text-align: center;
+    }
+
+    table th{
+        padding-left: 0%;
+    }
+
+    table td{
+        padding-right: 0;
+        padding-left: 19%;
+        text-align: right;
+    }
+
+
+    th, td {
+        padding: 2px 15px 5px 8px;
+    }
+
+    table{
+        margin: 0% ;
+    }
+
+}
 
 @media screen and (min-width: 450px) {
     .lista-pokemon-todos {
         grid-template-columns: 1fr 1fr;
     }
 } /*esto es para que a partir de 450px se cambie a dos columnas  */
+
 @media screen and (min-width: 700px) {
     .lista-pokemon-todos {
         grid-template-columns: 1fr 1fr 1fr;
