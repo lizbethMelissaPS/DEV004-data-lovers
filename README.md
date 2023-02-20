@@ -72,8 +72,6 @@ usuario necesita.
 
 ## Consideraciones generales
 
-* Interfaz desplegada: [Pokemon](https://alexandravaldez.github.io/DEV004-data-lovers/src/)
-
 * La lógica del proyecto debe estar implementada completamente en JavaScript (ES6), HTML y CSS. 
 En este proyecto NO está permitido usar librerías o
 frameworks, solo [vanilla JavaScript](https://medium.com/laboratoria-how-to/vanillajs-vs-jquery-31e623bbd46e)
@@ -121,7 +119,7 @@ Como: Nueva jugadora de pokemon
 Quiero: Ver los pokemos con sus nombres, tipos y numero
 Para: Poder identificarlos mas rapido.
 
-##### - Criterios de aceptación
+##### Criterios de aceptación
 Quiero ver la imagen de mi pokemon,
 Numero de identificación, nombre y tipo.
 
@@ -131,7 +129,7 @@ Como: Maestro de Pokemon
 Quiero: Tener acceso a información de los pokemones
 Para: Conocer cada detalle para los torneos
 
-##### - Criterios de aceptación:
+##### Criterios de aceptación:
 Como quiero conocer más a detalle de mis pokemones favoritos, 
 quiero buscarlos y distinguirlos mejor por el tipo o por su generacion,
 tener acceso a la información de cada uno como: 
@@ -177,11 +175,13 @@ Estos fueron los principales hallazgos descubiertos por el estudio de usabilidad
 * Arreglar el buscador y el ordenar para que esten mas centrados
 
 
+
 ## Autoras
  [Lizbeth Peña](https://github.com/lizbethMelissaPS)
 
- 
+
 [Alexandra Valdéz](https://github.com/AlexandraValdez)
 
 
 
+**Interfaz desplegada:**  [Pokemon](https://alexandravaldez.github.io/DEV004-data-lovers/src/)
