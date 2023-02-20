@@ -3,7 +3,7 @@
         width: 778px;
     }
 
-    .lista-pokemon-todos{
+    .list-pokemon{
         margin-left: 2%;
     }
     .sidebar .menu{
@@ -11,7 +11,7 @@
         flex-direction: column;
         gap: 2.5rem;
     }
-    .talla-container button{
+    .compute-stats button{
         top: 88.8%;
     }
 } 
@@ -25,10 +25,10 @@
         margin: 31% 5% 29% -10.5%;
     }
     
-    .cuadro-derecho{
+    .square-right{
         margin: 1% 1% 24% 42.7%;
     }
-    .cuadro-izquierdo{
+    .square-left{
         margin: 1% 1% 24% -1.61%;
     }
     .sidebar .menu{
@@ -54,10 +54,10 @@
         margin: 31% 5% 28% -14%;
     }
     
-    .cuadro-derecho{
+    .square-right{
         margin: 1% 1% 33% 56.27%;
     }
-    .cuadro-izquierdo{
+    .square-left{
         margin: 1% 1% 33% -2.15%;
     }
     .sidebar .menu {
@@ -78,7 +78,7 @@
         flex-wrap: wrap;
     }
 
-    .search-ordenar{
+    .search-order{
         flex-wrap: wrap;
     }
 
@@ -114,14 +114,14 @@
         margin: 27% 1% 25% -10%;
     }
     
-    .cuadro-derecho{
+    .square-right{
         margin: 1% 1% 39.9% 75%;
     }
-    .cuadro-izquierdo{
+    .square-left{
         margin: 1% 1% 40% -2.88%;
     }
 
-    .talla-container button {
+    .compute-stats button {
         top: 118.3%;
     }
 }
@@ -135,7 +135,7 @@
 }
 
 @media (max-width: 425px){
-    .search-ordenar{
+    .search-order{
         justify-items: center;
         display: flex;
         flex-direction: column;
@@ -145,7 +145,7 @@
     .order-box{
         width: 180px;
     }
-    .lista-pokemon-todos{   
+    .list-pokemon{   
     padding: 2.4rem 2rem 0 3rem;
     grid-template-columns: 1fr;
 
@@ -159,15 +159,15 @@
         display: none;
     }
     
-    .cuadro-derecho{
+    .square-right{
         margin: 1% 1% 70% 82.5%;
     }
-    .cuadro-izquierdo{
+    .square-left{
         margin: 1% 1% 70% -5.1%;
         z-index: 1;
     }
 
-    .contenedor{
+    .box-container{
         display: flex;
         flex-wrap: wrap;
         text-align: center;
@@ -177,23 +177,23 @@
         padding-bottom: 6%;
     }
 
-    #modal-info h1{
+    #popup-info h1{
         font-size: 40px;
         padding: 18rem 0 1.2rem 0;
     }
-    #modal-info {
-        overflow-y: scroll; /* para hacer scroll en el modal */
+    #popup-info {
+        overflow-y: scroll; /* para hacer scroll en el popup */
     }
 
-    .box-data-d {
+    .box-data-right {
         text-align: center;
         margin: 0;
     }
-    .box-data-dd {
+    .stats {
         text-align: center;
         margin: 0;
     }
-    .box-data-iz {
+    .box-data-left {
         text-align: center;
     }
 
@@ -221,7 +221,7 @@
 
 /* Media query para pokebolas */
 @media (min-width: 1024px) and (max-width: 1300px) {
-	.lista-pokemon-todos {
+	.list-pokemon {
         grid-template-columns: 0fr 0fr 0fr;
         margin: 0% 8%;
         gap: 1.5rem;
@@ -240,7 +240,7 @@
     }
 }
 @media (max-width: 768px) {
-    .lista-pokemon-todos{
+    .list-pokemon{
         grid-template-columns: 1fr 1fr;
         margin-left: 9%;
     }
@@ -249,7 +249,7 @@
     }
 }
 @media (max-width: 425px) {
-    .lista-pokemon-todos{
+    .list-pokemon{
         grid-template-columns: 1fr;
         margin-left: 9%;
     }

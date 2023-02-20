@@ -1,7 +1,7 @@
 import {
   filterDataType,
   filterDataGeneration,
-  buscar,
+  search,
   sortData,
 } from "../src/data.js";
 
@@ -572,9 +572,9 @@ describe("filter de generacion", () => {
   });
 });
 
-describe("buscar pokemon", () => {
+describe("search pokemon", () => {
   it("is a function", () => {
-    expect(typeof buscar).toBe("function");
+    expect(typeof search).toBe("function");
   });
 
   it("return el pokemon que busca", () => {
@@ -758,7 +758,7 @@ describe("buscar pokemon", () => {
         },
       },
     ];
-    expect(buscar(ejemplo2, "bulbasaur")).toEqual([
+    expect(search(ejemplo2, "bulbasaur")).toEqual([
       {
         num: "001",
         name: "bulbasaur",

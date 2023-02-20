@@ -19,7 +19,6 @@
 * [8. Autoras](#8-Autoras)
 
 
-***
 
 ## Definición del producto 
 
