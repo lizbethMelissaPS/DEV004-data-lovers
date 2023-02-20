@@ -1,3 +1,21 @@
+@media (max-width: 1440px) {
+    .search-box {
+        width: 778px;
+    }
+
+    .lista-pokemon-todos{
+        margin-left: 2%;
+    }
+    .sidebar .menu{
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+    .talla-container button{
+        top: 88.8%;
+    }
+} 
+
 @media (max-width: 1366px) {
     .img-p{
         /* margin: 33% 1% 25% 18%; */
@@ -13,6 +31,9 @@
     .cuadro-izquierdo{
         margin: 1% 1% 24% -1.61%;
     }
+    .sidebar .menu{
+        gap: .22rem;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -21,7 +42,7 @@
 	}
 
     .search-box{
-        width: 400px;
+        width: 463px;
         margin-left: 10%;
     }
 
@@ -39,13 +60,17 @@
     .cuadro-izquierdo{
         margin: 1% 1% 33% -2.15%;
     }
+    .sidebar .menu {
+        gap: 1.24rem;
+    }
 }
 
 @media (max-width: 768px) {
 
     .search-box{
-        width: 30%;
+        width: 52%;
         flex-direction: column;
+        margin-left: 3%;
 
     }
     .order-box{
@@ -55,7 +80,6 @@
 
     .search-ordenar{
         flex-wrap: wrap;
-        z-index: -1;
     }
 
 	.menu-toggle {
@@ -78,6 +102,7 @@
 
 	.sidebar.is-active {
 		left: 0;
+        z-index: 2;
 	}
 
     .img-p{
@@ -90,31 +115,40 @@
     }
     
     .cuadro-derecho{
-        margin: 1% 1% 39.9% 73.63%;
+        margin: 1% 1% 39.9% 75%;
     }
     .cuadro-izquierdo{
-        margin: 1% 1% 40% -2.7%;
+        margin: 1% 1% 40% -2.88%;
     }
 
+    .talla-container button {
+        top: 118.3%;
+    }
 }
 
 @media (max-width: 600px){
     .search-box{
-        width: 200px;
+        width: 180px;
+        margin-left: 0;
+        margin-right: 5%;
     }
 }
 
 @media (max-width: 425px){
     .search-ordenar{
         justify-items: center;
-        display: grid;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
     }
 
     .order-box{
         width: 180px;
     }
-    .lista-pokemon-todos{
-        padding: 0 2rem 0 4.9rem;
+    .lista-pokemon-todos{   
+    padding: 2.4rem 2rem 0 3rem;
+    grid-template-columns: 1fr;
+
     }
 
     .img-p{
@@ -184,15 +218,41 @@
 
 }
 
-@media screen and (min-width: 450px) {
-    .lista-pokemon-todos {
-        grid-template-columns: 1fr 1fr;
-    }
-} /*esto es para que a partir de 450px se cambie a dos columnas  */
 
-@media screen and (min-width: 700px) {
-    .lista-pokemon-todos {
-        grid-template-columns: 1fr 1fr 1fr;
+/* Media query para pokebolas */
+@media (min-width: 1024px) and (max-width: 1300px) {
+	.lista-pokemon-todos {
+        grid-template-columns: 0fr 0fr 0fr;
+        margin: 0% 8%;
+        gap: 1.5rem;
     }
-}/*esto es para que a partir de 700px se cambie a tres columnas  */
+    .pokeball{
+        width: 210px;
+        height: 200px;
+        margin: 4% 19% 6% 22%;
+    }
+
+    .pokemon{
+        margin: 1% 22% 1% 20%;
+    }
+    .img-container{
+        padding-inline: 0;
+    }
+}
+@media (max-width: 768px) {
+    .lista-pokemon-todos{
+        grid-template-columns: 1fr 1fr;
+        margin-left: 9%;
+    }
+    .img-container{
+        padding-inline: 1rem;
+    }
+}
+@media (max-width: 425px) {
+    .lista-pokemon-todos{
+        grid-template-columns: 1fr;
+        margin-left: 9%;
+    }
+}
+
 
