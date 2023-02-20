@@ -1,7 +1,7 @@
 
 
 <p align="center" width="100%">
-    <img width="100%" src="./src/images/Logo.png"> 
+    <img width="100%" src="./src/images/logo.png"> 
 </p>
 
 ***
@@ -121,7 +121,7 @@ Como: Nueva jugadora de pokemon
 Quiero: Ver los pokemos con sus nombres, tipos y numero
 Para: Poder identificarlos mas rapido.
 
-###### - Criterios de aceptación
+##### - Criterios de aceptación
 Quiero ver la imagen de mi pokemon,
 Numero de identificación, nombre y tipo.
 
@@ -131,7 +131,7 @@ Como: Maestro de Pokemon
 Quiero: Tener acceso a información de los pokemones
 Para: Conocer cada detalle para los torneos
 
-###### - Criterios de aceptación:
+##### - Criterios de aceptación:
 Como quiero conocer más a detalle de mis pokemones favoritos, 
 quiero buscarlos y distinguirlos mejor por el tipo o por su generacion,
 tener acceso a la información de cada uno como: 
@@ -164,7 +164,7 @@ cuanto tiene de ataque, defensa, etc.
 ![Paleta de colores](./src/images/colores.png)
 
 ##### Fuente
-![Fuente](./src/images/fuente.png)
+![Fuente](./src/images/Fuente.png)
 
 
 
@@ -179,7 +179,9 @@ Estos fueron los principales hallazgos descubiertos por el estudio de usabilidad
 
 ## Autoras
  [Lizbeth Peña](https://github.com/lizbethMelissaPS)
- [Alexandra Valdéz](https://github.com/AlexandraValdez)
+
+ 
+[Alexandra Valdéz](https://github.com/AlexandraValdez)
 
 
 
