@@ -68,11 +68,9 @@
 .sidebar {
 	flex: 1 1 0;
 	max-width: 300px;
-	/* padding: 2rem 1rem; */
-	/* background-color: var(--clr-blue); */
     margin: 0 auto;
-    
 }
+
 .menu {
 	flex: 1 1 0;
 	max-width: 300px;
@@ -176,6 +174,12 @@
     border-radius: 100vmax;
 }
 
+.type:hover{
+    filter: saturate(200%);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
 .img-container img {
     width: 100%;
     max-width: 10rem;
@@ -186,6 +190,10 @@
     padding-inline: 1rem;
     display: flex;
     justify-content: center;
+}
+.img-container:hover {
+    filter: contrast(120%);
+    cursor: pointer;
 }
 
 .poison {
@@ -383,7 +391,6 @@ option:hover{
     justify-content: center;
     align-items: center;
     padding: 1rem 0 0 0;
-    
 }
 
 .text h1{
@@ -434,6 +441,12 @@ option:hover{
     text-transform: uppercase;
     font-family: 'League Spartan';
 
+}
+.talla-container button:hover{
+    
+    filter: saturate(200%);
+    transform: scale(1.1);
+    cursor: pointer;
 }
 
 
@@ -496,15 +509,6 @@ option:hover{
 .pokemon-info{
     display: none;
 }
-/* .pokemon-info{
-    display: none;
-    flex-direction: column;
-    gap: .5rem;
-    padding-inline: 1rem;
-    align-items: center;
-    text-align: center;
-} */
-
 
 #modal-info {
     max-width: 650px;
@@ -528,7 +532,6 @@ option:hover{
     font-weight: 700;
     z-index: 2;
 }
-
 
 .contenedor{
     display: grid;
