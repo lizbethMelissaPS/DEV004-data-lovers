@@ -12,18 +12,18 @@ export const filterDataGeneration = (data, condition) => {
 export const sortData = (data, sortOrder) => {
   let sort;
   switch (sortOrder) {
-    case "a-z":
-      sort = data.sort((a, b) => a.name.localeCompare(b.name));
-      break;
-    case "z-a":
-      sort = data.sort((a, b) => b.name.localeCompare(a.name));
-      break;
-    case "ascending":
-      sort = data.sort((a, b) => a.num.localeCompare(b.num));
-      break;
-    case "descending":
-      sort = data.sort((a, b) => b.num.localeCompare(a.num));
-      break;
+  case "a-z":
+    sort = data.sort((a, b) => a.name.localeCompare(b.name));
+    break;
+  case "z-a":
+    sort = data.sort((a, b) => b.name.localeCompare(a.name));
+    break;
+  case "ascending":
+    sort = data.sort((a, b) => a.num.localeCompare(b.num));
+    break;
+  case "descending":
+    sort = data.sort((a, b) => b.num.localeCompare(a.num));
+    break;
   }
   return sort;
 };

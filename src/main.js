@@ -51,8 +51,8 @@ function backCard(pokemon) {
           <h3>Resistant</h3>
           <div class="type-info">
             ${pokemon.resistant
-              .map((type) => `<p class="${type} type">${type}</p>`)
-              .join("")}
+    .map((type) => `<p class="${type} type">${type}</p>`)
+    .join("")}
           </div>
         </div>
         <div class="stats">
@@ -84,8 +84,8 @@ function backCard(pokemon) {
           <h3>Weaknesses</h3>
           <div class="type-info">
             ${pokemon.weaknesses
-              .map((type) => `<p class="${type} type">${type}</p>`)
-              .join("")}
+    .map((type) => `<p class="${type} type">${type}</p>`)
+    .join("")}
           </div>
         </div>
       </div>
@@ -105,8 +105,8 @@ function frontCard(element) {
             </div>
             <div class="type-container">
               ${element.type
-                .map((type) => `<p class="${type} type">${type}</p>`)
-                .join("")}
+    .map((type) => `<p class="${type} type">${type}</p>`)
+    .join("")}
             </div>
           </div>`;
 }
